@@ -4,3 +4,9 @@ C:\Users\juani\Desktop\acces\cSharp-MaxiPrograma\cSharp-II\u6\discoAppU6\WinForm
 C:\Users\juani\Desktop\acces\cSharp-MaxiPrograma\cSharp-II\u6\discoAppU6\WinFormsApp1\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\juani\Desktop\acces\cSharp-MaxiPrograma\cSharp-II\u6\discoAppU6\WinFormsApp1\Dominio\obj\Debug\Dominio.dll
 C:\Users\juani\Desktop\acces\cSharp-MaxiPrograma\cSharp-II\u6\discoAppU6\WinFormsApp1\Dominio\obj\Debug\Dominio.pdb
+C:\Users\juani\Desktop\acces\cSharp-MaxiPrograma\cSharp-III\U5\app-web-U5\Dominio\bin\Debug\Dominio.dll
+C:\Users\juani\Desktop\acces\cSharp-MaxiPrograma\cSharp-III\U5\app-web-U5\Dominio\bin\Debug\Dominio.pdb
+C:\Users\juani\Desktop\acces\cSharp-MaxiPrograma\cSharp-III\U5\app-web-U5\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\juani\Desktop\acces\cSharp-MaxiPrograma\cSharp-III\U5\app-web-U5\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\juani\Desktop\acces\cSharp-MaxiPrograma\cSharp-III\U5\app-web-U5\Dominio\obj\Debug\Dominio.dll
+C:\Users\juani\Desktop\acces\cSharp-MaxiPrograma\cSharp-III\U5\app-web-U5\Dominio\obj\Debug\Dominio.pdb

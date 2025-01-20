@@ -1,12 +1,190 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\juani\\Desktop\\acces\\cSharp-MaxiPrograma\\cSharp-III\\U5\\app-web-U5\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D25AB622-A962-44D4-A0C4-AA1A27B6EADF}|Presentacion-Web\\Presentacion-Web.csproj|c:\\users\\juani\\desktop\\acces\\csharp-maxiprograma\\csharp-iii\\u5\\app-web-u5\\presentacion-web\\formlistadiscos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{D25AB622-A962-44D4-A0C4-AA1A27B6EADF}|Presentacion-Web\\Presentacion-Web.csproj|solutionrelative:presentacion-web\\formlistadiscos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BB8F8B8-AF41-476B-BEA0-EE5A01F3618B}|Dominio\\Dominio.csproj|c:\\users\\juani\\desktop\\acces\\csharp-maxiprograma\\csharp-iii\\u5\\app-web-u5\\dominio\\disco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BB8F8B8-AF41-476B-BEA0-EE5A01F3618B}|Dominio\\Dominio.csproj|solutionrelative:dominio\\disco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BB8F8B8-AF41-476B-BEA0-EE5A01F3618B}|Dominio\\Dominio.csproj|c:\\users\\juani\\desktop\\acces\\csharp-maxiprograma\\csharp-iii\\u5\\app-web-u5\\dominio\\estilo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BB8F8B8-AF41-476B-BEA0-EE5A01F3618B}|Dominio\\Dominio.csproj|solutionrelative:dominio\\estilo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D25AB622-A962-44D4-A0C4-AA1A27B6EADF}|Presentacion-Web\\Presentacion-Web.csproj|c:\\users\\juani\\desktop\\acces\\csharp-maxiprograma\\csharp-iii\\u5\\app-web-u5\\presentacion-web\\formlistadiscos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D25AB622-A962-44D4-A0C4-AA1A27B6EADF}|Presentacion-Web\\Presentacion-Web.csproj|solutionrelative:presentacion-web\\formlistadiscos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3870D24A-113A-4AB8-8075-78B6CFE4E809}|Negocio\\Negocio.csproj|c:\\users\\juani\\desktop\\acces\\csharp-maxiprograma\\csharp-iii\\u5\\app-web-u5\\negocio\\discodata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3870D24A-113A-4AB8-8075-78B6CFE4E809}|Negocio\\Negocio.csproj|solutionrelative:negocio\\discodata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BB8F8B8-AF41-476B-BEA0-EE5A01F3618B}|Dominio\\Dominio.csproj|c:\\users\\juani\\desktop\\acces\\csharp-maxiprograma\\csharp-iii\\u5\\app-web-u5\\dominio\\edicion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BB8F8B8-AF41-476B-BEA0-EE5A01F3618B}|Dominio\\Dominio.csproj|solutionrelative:dominio\\edicion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D25AB622-A962-44D4-A0C4-AA1A27B6EADF}|Presentacion-Web\\Presentacion-Web.csproj|c:\\users\\juani\\desktop\\acces\\csharp-maxiprograma\\csharp-iii\\u5\\app-web-u5\\presentacion-web\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D25AB622-A962-44D4-A0C4-AA1A27B6EADF}|Presentacion-Web\\Presentacion-Web.csproj|solutionrelative:presentacion-web\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D25AB622-A962-44D4-A0C4-AA1A27B6EADF}|Presentacion-Web\\Presentacion-Web.csproj|c:\\users\\juani\\desktop\\acces\\csharp-maxiprograma\\csharp-iii\\u5\\app-web-u5\\presentacion-web\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{D25AB622-A962-44D4-A0C4-AA1A27B6EADF}|Presentacion-Web\\Presentacion-Web.csproj|solutionrelative:presentacion-web\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3870D24A-113A-4AB8-8075-78B6CFE4E809}|Negocio\\Negocio.csproj|c:\\users\\juani\\desktop\\acces\\csharp-maxiprograma\\csharp-iii\\u5\\app-web-u5\\negocio\\accesodatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3870D24A-113A-4AB8-8075-78B6CFE4E809}|Negocio\\Negocio.csproj|solutionrelative:negocio\\accesodatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D25AB622-A962-44D4-A0C4-AA1A27B6EADF}|Presentacion-Web\\Presentacion-Web.csproj|c:\\users\\juani\\desktop\\acces\\csharp-maxiprograma\\csharp-iii\\u5\\app-web-u5\\presentacion-web\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{D25AB622-A962-44D4-A0C4-AA1A27B6EADF}|Presentacion-Web\\Presentacion-Web.csproj|solutionrelative:presentacion-web\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Disco.cs",
+              "DocumentMoniker": "C:\\Users\\juani\\Desktop\\acces\\cSharp-MaxiPrograma\\cSharp-III\\U5\\app-web-U5\\Dominio\\Disco.cs",
+              "RelativeDocumentMoniker": "Dominio\\Disco.cs",
+              "ToolTip": "C:\\Users\\juani\\Desktop\\acces\\cSharp-MaxiPrograma\\cSharp-III\\U5\\app-web-U5\\Dominio\\Disco.cs",
+              "RelativeToolTip": "Dominio\\Disco.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAcwBYAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T21:54:01.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Edicion.cs",
+              "DocumentMoniker": "C:\\Users\\juani\\Desktop\\acces\\cSharp-MaxiPrograma\\cSharp-III\\U5\\app-web-U5\\Dominio\\Edicion.cs",
+              "RelativeDocumentMoniker": "Dominio\\Edicion.cs",
+              "ToolTip": "C:\\Users\\juani\\Desktop\\acces\\cSharp-MaxiPrograma\\cSharp-III\\U5\\app-web-U5\\Dominio\\Edicion.cs",
+              "RelativeToolTip": "Dominio\\Edicion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T21:55:12.363Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Estilo.cs",
+              "DocumentMoniker": "C:\\Users\\juani\\Desktop\\acces\\cSharp-MaxiPrograma\\cSharp-III\\U5\\app-web-U5\\Dominio\\Estilo.cs",
+              "RelativeDocumentMoniker": "Dominio\\Estilo.cs",
+              "ToolTip": "C:\\Users\\juani\\Desktop\\acces\\cSharp-MaxiPrograma\\cSharp-III\\U5\\app-web-U5\\Dominio\\Estilo.cs",
+              "RelativeToolTip": "Dominio\\Estilo.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAuwAwAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T21:49:42.594Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Default.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\juani\\Desktop\\acces\\cSharp-MaxiPrograma\\cSharp-III\\U5\\app-web-U5\\Presentacion-Web\\Default.aspx.cs",
+              "RelativeDocumentMoniker": "Presentacion-Web\\Default.aspx.cs",
+              "ToolTip": "C:\\Users\\juani\\Desktop\\acces\\cSharp-MaxiPrograma\\cSharp-III\\U5\\app-web-U5\\Presentacion-Web\\Default.aspx.cs",
+              "RelativeToolTip": "Presentacion-Web\\Default.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T21:35:00.404Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AccesoDatos.cs",
+              "DocumentMoniker": "C:\\Users\\juani\\Desktop\\acces\\cSharp-MaxiPrograma\\cSharp-III\\U5\\app-web-U5\\Negocio\\AccesoDatos.cs",
+              "RelativeDocumentMoniker": "Negocio\\AccesoDatos.cs",
+              "ToolTip": "C:\\Users\\juani\\Desktop\\acces\\cSharp-MaxiPrograma\\cSharp-III\\U5\\app-web-U5\\Negocio\\AccesoDatos.cs",
+              "RelativeToolTip": "Negocio\\AccesoDatos.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAA4wCkAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T21:24:59.919Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormListaDiscos.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\juani\\Desktop\\acces\\cSharp-MaxiPrograma\\cSharp-III\\U5\\app-web-U5\\Presentacion-Web\\FormListaDiscos.aspx.cs",
+              "RelativeDocumentMoniker": "Presentacion-Web\\FormListaDiscos.aspx.cs",
+              "ToolTip": "C:\\Users\\juani\\Desktop\\acces\\cSharp-MaxiPrograma\\cSharp-III\\U5\\app-web-U5\\Presentacion-Web\\FormListaDiscos.aspx.cs",
+              "RelativeToolTip": "Presentacion-Web\\FormListaDiscos.aspx.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T21:09:13.667Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormListaDiscos.aspx",
+              "DocumentMoniker": "C:\\Users\\juani\\Desktop\\acces\\cSharp-MaxiPrograma\\cSharp-III\\U5\\app-web-U5\\Presentacion-Web\\FormListaDiscos.aspx",
+              "RelativeDocumentMoniker": "Presentacion-Web\\FormListaDiscos.aspx",
+              "ToolTip": "C:\\Users\\juani\\Desktop\\acces\\cSharp-MaxiPrograma\\cSharp-III\\U5\\app-web-U5\\Presentacion-Web\\FormListaDiscos.aspx",
+              "RelativeToolTip": "Presentacion-Web\\FormListaDiscos.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-01-20T20:43:50.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DiscoData.cs",
+              "DocumentMoniker": "C:\\Users\\juani\\Desktop\\acces\\cSharp-MaxiPrograma\\cSharp-III\\U5\\app-web-U5\\Negocio\\DiscoData.cs",
+              "RelativeDocumentMoniker": "Negocio\\DiscoData.cs",
+              "ToolTip": "C:\\Users\\juani\\Desktop\\acces\\cSharp-MaxiPrograma\\cSharp-III\\U5\\app-web-U5\\Negocio\\DiscoData.cs",
+              "RelativeToolTip": "Negocio\\DiscoData.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAlwEYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T20:47:45.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Default.aspx",
+              "DocumentMoniker": "C:\\Users\\juani\\Desktop\\acces\\cSharp-MaxiPrograma\\cSharp-III\\U5\\app-web-U5\\Presentacion-Web\\Default.aspx",
+              "RelativeDocumentMoniker": "Presentacion-Web\\Default.aspx",
+              "ToolTip": "C:\\Users\\juani\\Desktop\\acces\\cSharp-MaxiPrograma\\cSharp-III\\U5\\app-web-U5\\Presentacion-Web\\Default.aspx",
+              "RelativeToolTip": "Presentacion-Web\\Default.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-01-20T20:34:00.162Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Site.Master",
+              "DocumentMoniker": "C:\\Users\\juani\\Desktop\\acces\\cSharp-MaxiPrograma\\cSharp-III\\U5\\app-web-U5\\Presentacion-Web\\Site.Master",
+              "RelativeDocumentMoniker": "Presentacion-Web\\Site.Master",
+              "ToolTip": "C:\\Users\\juani\\Desktop\\acces\\cSharp-MaxiPrograma\\cSharp-III\\U5\\app-web-U5\\Presentacion-Web\\Site.Master",
+              "RelativeToolTip": "Presentacion-Web\\Site.Master",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-01-20T20:29:25.661Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

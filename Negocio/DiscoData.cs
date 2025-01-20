@@ -67,6 +67,54 @@ namespace Negocio
 
         }
 
+        public List<Disco> listarSP()
+        {
+            List<Disco> listaDiscos = new List<Disco>();
+            AccesoDatos accesoDatos = new AccesoDatos();
+
+            try
+            {
+
+                //string consulta = "SELECT D.Id AS Numero,D.Titulo AS Nombre,D.CantidadCanciones AS Cantidad,D.FechaLanzamiento AS Lanzamiento,D.UrlImagenTapa AS UrlImagen,E.Descripcion AS Estilo,TE.Descripcion AS Edicion,D.IdEstilo AS IdTipo,D.IdTipoEdicion AS IdDebilidad FROM dbo.DISCOS D JOIN dbo.ESTILOS E ON E.Id = D.IdEstilo JOIN dbo.TiposEdicion TE ON TE.Id = D.IdTipoEdicion;";
+                //accesoDatos.setearConsulta(consulta);
+
+
+                accesoDatos.setearProcedimiento("storedListar");
+                accesoDatos.ejecutarLectura();
+
+                while (accesoDatos.Lector.Read())
+                {
+
+                    Disco aux = new Disco();
+
+                    aux.Id = (int)accesoDatos.Lector["Numero"];
+                    aux.Titulo = (string)accesoDatos.Lector["Nombre"];
+                    aux.CantidadCanciones = (int)accesoDatos.Lector["Cantidad"];
+
+                    if (!(accesoDatos.Lector.IsDBNull(accesoDatos.Lector.GetOrdinal("UrlImagen"))))
+                        aux.UrlImagenTapa = (string)accesoDatos.Lector["UrlImagen"];
+
+
+                    aux.Estilo = new Estilo();
+                    aux.Estilo.Id = (int)accesoDatos.Lector["IdTipo"];
+                    aux.Estilo.Descripcion = (string)accesoDatos.Lector["Estilo"];
+                    aux.Edicion = new Edicion();
+                    aux.Edicion.Id = (int)accesoDatos.Lector["IdDebilidad"];
+                    aux.Edicion.Descripcion = (string)accesoDatos.Lector["Edicion"];
+
+                    listaDiscos.Add(aux);
+
+                }
+
+                return listaDiscos;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public void agregarDisco(Disco nuevo)
         {
 
