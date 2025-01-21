@@ -19,6 +19,17 @@ namespace Presentacion_Web
         {
             DiscoData discoData = new DiscoData();
             ListaDisco = discoData.listarSP();
+
+            if (!IsPostBack)
+            {
+                RepRepetidor.DataSource = ListaDisco;
+                RepRepetidor.DataBind();
+            }
+        }
+
+        protected void BtnRepeater_Click(object sender, EventArgs e)
+        {
+            string valor = ((Button)sender).CommandArgument;
         }
     }
 }
