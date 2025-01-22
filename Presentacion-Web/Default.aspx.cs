@@ -24,6 +24,14 @@ namespace Presentacion_Web
             {
                 RepRepetidor.DataSource = ListaDisco;
                 RepRepetidor.DataBind();
+                if (!IsPostBack)
+                {
+                    if (Session["ListaDiscos"] == null)
+                    {
+                        DiscoData negocio = new DiscoData();
+                        Session.Add("ListaDiscos", negocio.listarSP());
+                    }
+                }
             }
         }
 

@@ -34,7 +34,7 @@
                         <div class="card-body">
                             <h5 class="card-title"><%#Eval("Titulo") %></h5>
                             <p class="card-text"><%#Eval("Estilo") %></p>
-                            <a href="FormDetalleDisco.aspx?id=<%#Eval("Id") %>">Ver detalle</a>
+                            <a href="FormAgregarDisco.aspx?id=<%#Eval("Id") %>">Ver detalle</a>
                             <asp:Button ID="BtnRepeater" CssClass="btn btn-primary" runat="server" Text="Ejemplo" CommandArgument='<%#Eval("Id") %>' CommandName="discoId" OnClick="BtnRepeater_Click" />
                         </div>
                     </div>

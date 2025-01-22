@@ -19,6 +19,25 @@ namespace Presentacion_Web
             DGVListaDiscos.DataSource = discoData.listarSP();
             DGVListaDiscos.DataBind();
 
+            if (!IsPostBack)
+            {
+                if (Session["ListaDiscos"] == null)
+                {
+                    DiscoData negocio = new DiscoData();
+                    Session.Add("ListaDiscos", negocio.listarSP());
+                }
+            }
+
         }
+
+        protected void DGVListaDiscos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var id = DGVListaDiscos.SelectedDataKey.Value.ToString();
+            Response.Redirect("FormAgregarDisco.aspx?id=" + id);
+        }
+
+        protected void DGVListaDiscos_PageIndexChanged(object sender, EventArgs e)
+        {
+        }        }
     }
 }

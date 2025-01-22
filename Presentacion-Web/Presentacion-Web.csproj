@@ -84,7 +84,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Default.aspx" />
-    <Content Include="FormDetalleDisco.aspx" />
+    <Content Include="FormAgregarDisco.aspx" />
     <Content Include="FormListaDiscos.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -102,12 +102,12 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FormDetalleDisco.aspx.cs">
-      <DependentUpon>FormDetalleDisco.aspx</DependentUpon>
+    <Compile Include="FormAgregarDisco.aspx.cs">
+      <DependentUpon>FormAgregarDisco.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FormDetalleDisco.aspx.designer.cs">
-      <DependentUpon>FormDetalleDisco.aspx</DependentUpon>
+    <Compile Include="FormAgregarDisco.aspx.designer.cs">
+      <DependentUpon>FormAgregarDisco.aspx</DependentUpon>
     </Compile>
     <Compile Include="FormListaDiscos.aspx.cs">
       <DependentUpon>FormListaDiscos.aspx</DependentUpon>
