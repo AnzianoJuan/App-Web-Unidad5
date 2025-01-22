@@ -15,6 +15,15 @@ namespace Presentacion_Web
     {
 
         /// <summary>
+        /// Control ScriptManager.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager;
+
+        /// <summary>
         /// Control TextBoxId.
         /// </summary>
         /// <remarks>
@@ -42,6 +51,15 @@ namespace Presentacion_Web
         protected global::System.Web.UI.WebControls.TextBox TextBoxCantidadCanciones;
 
         /// <summary>
+        /// Control UpdatePanelImagen.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanelImagen;
+
+        /// <summary>
         /// Control TextBoxUrlImagenTapa.
         /// </summary>
         /// <remarks>
@@ -49,6 +67,15 @@ namespace Presentacion_Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxUrlImagenTapa;
+
+        /// <summary>
+        /// Control BtnCargarImagen.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnCargarImagen;
 
         /// <summary>
         /// Control DropDownListEstilo.

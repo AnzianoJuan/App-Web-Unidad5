@@ -11,6 +11,7 @@ namespace Presentacion_Web
 {
     public partial class FormAgregarDisco : System.Web.UI.Page
     {
+        public string UrlImagenTapa { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -61,23 +62,32 @@ namespace Presentacion_Web
             DiscoData data = new DiscoData();
 
             // Carga los estilos
-            DropDownListEstilo.DataSource = data.listarEstilos(); // Método que devuelve los estilos
-            DropDownListEstilo.DataTextField = "Descripcion"; // Campo para mostrar
-            DropDownListEstilo.DataValueField = "Id"; // Campo para el valor
+            DropDownListEstilo.DataSource = data.listarEstilos(); 
+            DropDownListEstilo.DataTextField = "Descripcion"; 
+            DropDownListEstilo.DataValueField = "Id"; 
             DropDownListEstilo.DataBind();
 
             // Agregar un elemento inicial
             DropDownListEstilo.Items.Insert(0, new ListItem("Seleccione un estilo", "0"));
 
             // Carga las ediciones
-            DropDownListEdicion.DataSource = data.listarEdiciones(); // Método que devuelve las ediciones
-            DropDownListEdicion.DataTextField = "Descripcion"; // Campo para mostrar
-            DropDownListEdicion.DataValueField = "Id"; // Campo para el valor
+            DropDownListEdicion.DataSource = data.listarEdiciones(); 
+            DropDownListEdicion.DataTextField = "Descripcion"; 
+            DropDownListEdicion.DataValueField = "Id"; 
             DropDownListEdicion.DataBind();
 
             // Agregar un elemento inicial
             DropDownListEdicion.Items.Insert(0, new ListItem("Seleccione una edición", "0"));
         }
 
+        protected void BtnCargarImagen_Click(object sender, EventArgs e)
+        {
+            UrlImagenTapa = TextBoxUrlImagenTapa.Text;
+        }
+
+        protected void TextBoxUrlImagenTapa_TextChanged(object sender, EventArgs e)
+        {
+            UrlImagenTapa = TextBoxUrlImagenTapa.Text;
+        }
     }
 }
