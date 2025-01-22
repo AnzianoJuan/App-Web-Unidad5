@@ -25,12 +25,13 @@
             </div>
             <div class="mb-3">
                 <label for="DropDownListEstilo" class="form-label">Estilo</label>
-                <asp:DropDownList ID="DropDownListEstilo" CssClass="form-select" runat="server"></asp:DropDownList>
+                <asp:DropDownList ID="DropDownListEstilo" CssClass=" btn btn-outline-dark dropdown-toggle" runat="server"></asp:DropDownList>
             </div>
             <div class="mb-3">
                 <label for="DropDownListEdicion" class="form-label">Edición</label>
-                <asp:DropDownList ID="DropDownListEdicion" CssClass="form-select" runat="server"></asp:DropDownList>
+                <asp:DropDownList ID="DropDownListEdicion" CssClass="btn btn-outline-dark dropdown-toggle" runat="server"></asp:DropDownList>
             </div>
+            <hr />
             <div class="mb-3">
                 <asp:Button ID="ButtonAgregarDisco" CssClass="btn btn-primary" runat="server"  Text="Aceptar" />
                 <asp:Button ID="ButtonModificarDisco" CssClass="btn btn-primary" runat="server"  Text="Modificar" />

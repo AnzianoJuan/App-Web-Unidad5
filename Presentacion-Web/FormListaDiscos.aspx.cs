@@ -38,6 +38,6 @@ namespace Presentacion_Web
 
         protected void DGVListaDiscos_PageIndexChanged(object sender, EventArgs e)
         {
-        }        }
+        }        
     }
 }

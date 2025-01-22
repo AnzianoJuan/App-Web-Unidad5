@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Dominio;
+using Negocio;
 
 namespace Presentacion_Web
 {
@@ -12,26 +13,71 @@ namespace Presentacion_Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString["id"] != null)
+            try
             {
-                int id = int.Parse(Request.QueryString["id"].ToString());
+                if (!IsPostBack)
+                {
+                    listarDropDownListDB();
 
-                List<Disco> temporal = (List<Disco>)Session["ListaDiscos"];
-                Disco seleccionado = temporal.Find(x => x.Id == id);
+                    if (Request.QueryString["id"] != null)
+                    {
+                        int id = int.Parse(Request.QueryString["id"].ToString());
 
-                TextBoxTitulo.Text = seleccionado.Titulo;
-                TextBoxId.Text = seleccionado.Id.ToString();
-                TextBoxCantidadCanciones.Text = seleccionado.CantidadCanciones.ToString();
-                TextBoxUrlImagenTapa.Text = seleccionado.UrlImagenTapa;
+                        List<Disco> temporal = (List<Disco>)Session["ListaDiscos"];
+                        Disco seleccionado = temporal.Find(x => x.Id == id);
 
+                        if (seleccionado != null)
+                        {
+                            TextBoxTitulo.Text = seleccionado.Titulo;
+                            TextBoxId.Text = seleccionado.Id.ToString();
+                            TextBoxCantidadCanciones.Text = seleccionado.CantidadCanciones.ToString();
+                            TextBoxUrlImagenTapa.Text = seleccionado.UrlImagenTapa;
 
-                TextBoxId.ReadOnly = true;
-                ButtonAgregarDireccion.Enabled = false;
+                            // Preselecciona el valor correspondiente en los dropdowns
+
+                            Estilo estiloVar = seleccionado.Estilo;  
+                            DropDownListEstilo.SelectedValue = estiloVar.Id.ToString();
+
+                            Edicion edicionVar = seleccionado.Edicion;
+                            DropDownListEdicion.SelectedValue = edicionVar.Id.ToString();
+
+                            TextBoxId.ReadOnly = true;
+                            ButtonAgregarDisco.Enabled = false;
+                        }
+                    }
+                    else
+                    {
+                        ButtonModificarDisco.Enabled = false;
+                    }
+                }
             }
-            else if (Request.QueryString["id"] == null)
+            catch (Exception ex)
             {
-                ButtonModificarDireccion.Enabled = false;
+                Session.Add("Error", ex);
             }
         }
+        public void listarDropDownListDB()
+        {
+            DiscoData data = new DiscoData();
+
+            // Carga los estilos
+            DropDownListEstilo.DataSource = data.listarEstilos(); // Método que devuelve los estilos
+            DropDownListEstilo.DataTextField = "Descripcion"; // Campo para mostrar
+            DropDownListEstilo.DataValueField = "Id"; // Campo para el valor
+            DropDownListEstilo.DataBind();
+
+            // Agregar un elemento inicial
+            DropDownListEstilo.Items.Insert(0, new ListItem("Seleccione un estilo", "0"));
+
+            // Carga las ediciones
+            DropDownListEdicion.DataSource = data.listarEdiciones(); // Método que devuelve las ediciones
+            DropDownListEdicion.DataTextField = "Descripcion"; // Campo para mostrar
+            DropDownListEdicion.DataValueField = "Id"; // Campo para el valor
+            DropDownListEdicion.DataBind();
+
+            // Agregar un elemento inicial
+            DropDownListEdicion.Items.Insert(0, new ListItem("Seleccione una edición", "0"));
+        }
+
     }
 }

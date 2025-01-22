@@ -280,5 +280,30 @@ namespace Negocio
             }
 
         }
+
+        public List<Estilo> listarEstilos()
+        {
+            return new List<Estilo>{
+        new Estilo { Id = 1, Descripcion = "Pop Punk" },
+        new Estilo { Id = 2, Descripcion = "Pop " },
+        new Estilo { Id = 3, Descripcion = "Rock" },
+        new Estilo { Id = 4, Descripcion = "Grunge" },
+        new Estilo { Id = 5, Descripcion = "trap" },
+        new Estilo { Id = 6, Descripcion = "Hip hop" }
+
+            };
+        }
+
+        public List<Edicion> listarEdiciones()
+        {
+            return new List<Edicion>{
+        new Edicion { Id = 1, Descripcion = "Vinilo" },
+        new Edicion { Id = 2, Descripcion = "CD " },
+        new Edicion { Id = 3, Descripcion = "Tape" },
+        new Edicion { Id = 4, Descripcion = "mp3" },
+      
+            };
+        }
+
     }
 }
