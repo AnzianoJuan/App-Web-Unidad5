@@ -12,6 +12,8 @@ namespace Presentacion_Web
     public partial class FormAgregarDisco : System.Web.UI.Page
     {
         public string UrlImagenTapa { get; set; }
+
+        public string ImageAltas { get; set; } = "https://static.vecteezy.com/system/resources/previews/005/720/408/non_2x/crossed-image-icon-picture-not-available-delete-picture-symbol-free-vector.jpg";
         protected void Page_Load(object sender, EventArgs e)
         {
             try
