@@ -27,8 +27,16 @@ namespace Negocio
 
                 if (id != "")
                 {
-                    consulta += "and Id " + id;
-                    datos.setearConsulta(consulta);
+                    if (!string.IsNullOrEmpty(id))
+                    {
+                        consulta += " AND D.Id = @Id"; // Usamos parámetro para evitar SQL Injection
+                        datos.setearConsulta(consulta);
+                        datos.setearParametro("@Id", id);
+                    }
+                    else
+                    {
+                        datos.setearConsulta(consulta);
+                    }
                 }
                 else
                 {

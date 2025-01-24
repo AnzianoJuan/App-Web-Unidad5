@@ -26,14 +26,26 @@ namespace Presentacion_Web
                 {
                     listarDropDownListDB();
                 }
+
+                string id = Request.QueryString["id"] != null ? Request.QueryString["id"].ToString() : "";
+
                 //configuracion si estamos modificando
-                if (Request.QueryString["id"] != null) { 
-                
+                if (id != "") {
+
                     DiscoData discoData = new DiscoData();
 
-                    List<Disco> lista = discoData.listar(Request.QueryString["id"].ToString());
-                    Disco seleccionado = lista[0];
+                    Disco seleccionado = ((discoData.listar(id)[0]));
 
+                    //Precargar los campos 
+
+                    TextBoxId.Text = id;
+                    TextBoxTitulo.Text = seleccionado.Titulo;
+                    TextBoxUrlImagenTapa.Text = seleccionado.UrlImagenTapa;
+                    TextBoxCantidadCanciones.Text = seleccionado.CantidadCanciones.ToString();
+
+                    DropDownListEdicion.SelectedValue = seleccionado.Edicion.Id.ToString(); 
+                    DropDownListEstilo.SelectedValue = seleccionado.Estilo.Id.ToString();
+                    TextBoxUrlImagenTapa_TextChanged(sender, e);
 
                 }
             }
