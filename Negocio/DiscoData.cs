@@ -11,19 +11,29 @@ namespace Negocio
 {
     public class DiscoData
     {
-        public List<Disco> listar()
+        public List<Disco> listar(string id = "")
         {
 
             List<Disco> listaDiscos = new List<Disco>();
 
             AccesoDatos datos = new AccesoDatos();
+           
 
             try
             {
-                datos.setearConsulta("SELECT D.Id AS Id, Titulo, D.CantidadCanciones, D.UrlImagenTapa, E.Descripcion AS Estilo, TE.Descripcion AS Edicion, D.IdEstilo,D.IdTipoEdicion  FROM dbo.DISCOS D JOIN dbo.ESTILOS E ON E.Id = D.IdEstilo JOIN dbo.TiposEdicion TE ON TE.Id = D.IdTipoEdicion\r\n");
+                  string consulta = "SELECT D.Id AS Id, Titulo, D.CantidadCanciones, D.UrlImagenTapa, E.Descripcion AS Estilo, TE.Descripcion AS Edicion, D.IdEstilo,D.IdTipoEdicion  FROM dbo.DISCOS D JOIN dbo.ESTILOS E ON E.Id = D.IdEstilo JOIN dbo.TiposEdicion TE ON TE.Id = D.IdTipoEdicion ";
 
                 // consulta para no mostar los inactivos     datos.setearConsulta("SELECT D.Id AS Id, D.Titulo, D.CantidadCanciones, D.UrlImagenTapa, E.Descripcion AS Estilo, TE.Descripcion AS Edicion, D.IdEstilo,D.IdTipoEdicion  FROM dbo.DISCOS D JOIN dbo.ESTILOS E ON E.Id = D.IdEstilo JOIN dbo.TiposEdicion TE ON TE.Id = D.IdTipoEdicion and D.Activo = 1\r\n");
 
+                if (id != "")
+                {
+                    consulta += "and Id " + id;
+                    datos.setearConsulta(consulta);
+                }
+                else
+                {
+                    datos.setearConsulta(consulta);
+                }
 
                 datos.ejecutarLectura();
 

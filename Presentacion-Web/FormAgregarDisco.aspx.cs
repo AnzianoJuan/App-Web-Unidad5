@@ -13,12 +13,12 @@ namespace Presentacion_Web
     {
         public string UrlImagenTapa { get; set; }
 
-        public string ImageAltas { get; set; } = "https://static.vecteezy.com/system/resources/previews/005/720/408/non_2x/crossed-image-icon-picture-not-available-delete-picture-symbol-free-vector.jpg";
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            // pantalla inicial del formulario
+
             TextBoxId.Enabled = true;
-            ButtonAgregarDisco.Enabled = true;
 
             try
             {
@@ -26,11 +26,23 @@ namespace Presentacion_Web
                 {
                     listarDropDownListDB();
                 }
+                //configuracion si estamos modificando
+                if (Request.QueryString["id"] != null) { 
+                
+                    DiscoData discoData = new DiscoData();
+
+                    List<Disco> lista = discoData.listar(Request.QueryString["id"].ToString());
+                    Disco seleccionado = lista[0];
+
+
+                }
             }
             catch (Exception ex)
             {
                 Session.Add("Error", ex);
+                throw;
             }
+
         }
         public void listarDropDownListDB()
         {
