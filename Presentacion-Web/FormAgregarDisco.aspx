@@ -4,19 +4,21 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<asp:ScriptManager ID="ScriptManager" runat="server"></asp:ScriptManager>
+    <asp:ScriptManager ID="ScriptManager" runat="server"></asp:ScriptManager>
 
-<div class="container mt-5">
-    <!-- Título del formulario -->
-    <h2 class="mb-4 text-center">Gestión de Disco</h2>
+    <div class="container mt-5">
+        <!-- Título del formulario -->
+        <h2 class="mb-4 text-center">Gestión de Disco</h2>
 
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <!-- ID -->
-            <div class="mb-3">
-                <label for="TextBoxId" class="form-label">ID</label>
-                <asp:TextBox runat="server" ID="TextBoxId" CssClass="form-control" />
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <!-- ID -->
+                <div id="DivTextBoxId" runat="server" class="mb-3">
+                    <label for="TextBoxId" class="form-label">ID</label>
+                    <asp:TextBox runat="server" ID="TextBoxId" CssClass="form-control" />
+                </div>
             </div>
+
 
             <!-- Título -->
             <div class="mb-3">
@@ -36,13 +38,12 @@
                 <ContentTemplate>
                     <div class="mb-3">
                         <label for="TextBoxUrlImagenTapa" class="form-label">URL de Imagen</label>
-                        <asp:TextBox 
-                            runat="server" 
-                            AutoPostBack="true" 
-                            OnTextChanged="TextBoxUrlImagenTapa_TextChanged" 
-                            ID="TextBoxUrlImagenTapa" 
-                            CssClass="form-control" 
-                        />
+                        <asp:TextBox
+                            runat="server"
+                            AutoPostBack="true"
+                            OnTextChanged="TextBoxUrlImagenTapa_TextChanged"
+                            ID="TextBoxUrlImagenTapa"
+                            CssClass="form-control" />
                     </div>
 
                     <div class="text-center mb-3">
@@ -52,16 +53,16 @@
                     <div class="mb-3 text-center">
                         <img src="<% = UrlImagenTapa %>" alt="" class="img-fluid border" style="max-width: 70%;" />
                     </div>
-                  
+
                 </ContentTemplate>
             </asp:UpdatePanel>
 
             <!-- Dropdown para Estilo -->
             <div class="mb-3">
                 <label for="DropDownListEstilo" class="form-label">Estilo</label>
-                <asp:DropDownList 
-                    ID="DropDownListEstilo" 
-                    CssClass="form-select" 
+                <asp:DropDownList
+                    ID="DropDownListEstilo"
+                    CssClass="form-select"
                     runat="server">
                 </asp:DropDownList>
             </div>
@@ -69,9 +70,9 @@
             <!-- Dropdown para Edición -->
             <div class="mb-3">
                 <label for="DropDownListEdicion" class="form-label">Edición</label>
-                <asp:DropDownList 
-                    ID="DropDownListEdicion" 
-                    CssClass="form-select" 
+                <asp:DropDownList
+                    ID="DropDownListEdicion"
+                    CssClass="form-select"
                     runat="server">
                 </asp:DropDownList>
             </div>
@@ -85,7 +86,7 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
 
 
             <%-- <div class="mb-3">
@@ -93,7 +94,7 @@
                 <asp:Button ID="ButtonModificarDireccion" CssClass="btn btn-primary" runat="server"  OnClick="ButtonModificarAuto_Click" Text="Modificar" />
                 <a href="Default.aspx">Cancelar</a>
             </div>--%>
-            <asp:Label ID="LabelMensaje" runat="server" Text=""></asp:Label>
-   
+    <asp:Label ID="LabelMensaje" runat="server" Text=""></asp:Label>
+
 
 </asp:Content>

@@ -24,9 +24,6 @@ namespace Presentacion_Web
                 if (!IsPostBack)
                 {
                     listarDropDownListDB();
-                    TextBoxId.Enabled = false;
-                    TextBoxId.Visible = false;
-                    
                 }
 
                 string id = Request.QueryString["id"] != null ? Request.QueryString["id"].ToString() : "";
@@ -39,6 +36,7 @@ namespace Presentacion_Web
                     Disco seleccionado = ((discoData.listar(id)[0]));
 
                     //Precargar los campos 
+                    DivTextBoxId.Visible = false;
 
                     TextBoxId.Text = id;
                     TextBoxTitulo.Text = seleccionado.Titulo;
@@ -49,6 +47,11 @@ namespace Presentacion_Web
                     DropDownListEstilo.SelectedValue = seleccionado.Estilo.Id.ToString();
                     TextBoxUrlImagenTapa_TextChanged(sender, e);
 
+                }
+                else
+                {
+                    DivTextBoxId.Visible = true;
+                    TextBoxId.Enabled = true;
                 }
             }
             catch (Exception ex)

@@ -24,6 +24,15 @@ namespace Presentacion_Web
         protected global::System.Web.UI.ScriptManager ScriptManager;
 
         /// <summary>
+        /// Control DivTextBoxId.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivTextBoxId;
+
+        /// <summary>
         /// Control TextBoxId.
         /// </summary>
         /// <remarks>
