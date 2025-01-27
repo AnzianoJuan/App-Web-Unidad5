@@ -105,15 +105,6 @@ namespace Presentacion_Web
         protected global::System.Web.UI.WebControls.Button ButtonAgregarDisco;
 
         /// <summary>
-        /// Control ButtonModificarDisco.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonModificarDisco;
-
-        /// <summary>
         /// Control LabelMensaje.
         /// </summary>
         /// <remarks>

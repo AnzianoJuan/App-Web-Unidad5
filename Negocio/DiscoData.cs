@@ -1,11 +1,6 @@
-﻿using System;
+﻿using Dominio;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
-using Dominio;
-using System.Security.Cryptography.X509Certificates;
 
 namespace Negocio
 {
@@ -17,11 +12,11 @@ namespace Negocio
             List<Disco> listaDiscos = new List<Disco>();
 
             AccesoDatos datos = new AccesoDatos();
-           
+
 
             try
             {
-                  string consulta = "SELECT D.Id AS Id, Titulo, D.CantidadCanciones, D.UrlImagenTapa, E.Descripcion AS Estilo, TE.Descripcion AS Edicion, D.IdEstilo,D.IdTipoEdicion  FROM dbo.DISCOS D JOIN dbo.ESTILOS E ON E.Id = D.IdEstilo JOIN dbo.TiposEdicion TE ON TE.Id = D.IdTipoEdicion ";
+                string consulta = "SELECT D.Id AS Id, Titulo, D.CantidadCanciones, D.UrlImagenTapa, E.Descripcion AS Estilo, TE.Descripcion AS Edicion, D.IdEstilo,D.IdTipoEdicion  FROM dbo.DISCOS D JOIN dbo.ESTILOS E ON E.Id = D.IdEstilo JOIN dbo.TiposEdicion TE ON TE.Id = D.IdTipoEdicion ";
 
                 // consulta para no mostar los inactivos     datos.setearConsulta("SELECT D.Id AS Id, D.Titulo, D.CantidadCanciones, D.UrlImagenTapa, E.Descripcion AS Estilo, TE.Descripcion AS Edicion, D.IdEstilo,D.IdTipoEdicion  FROM dbo.DISCOS D JOIN dbo.ESTILOS E ON E.Id = D.IdEstilo JOIN dbo.TiposEdicion TE ON TE.Id = D.IdTipoEdicion and D.Activo = 1\r\n");
 
@@ -37,10 +32,6 @@ namespace Negocio
                     {
                         datos.setearConsulta(consulta);
                     }
-                }
-                else
-                {
-                    datos.setearConsulta(consulta);
                 }
 
                 datos.ejecutarLectura();
@@ -247,7 +238,8 @@ namespace Negocio
 
                 string consulta = "SELECT D.Id AS Id,Titulo, D.CantidadCanciones,  D.UrlImagenTapa, E.Descripcion AS Estilo, TE.Descripcion   AS Edicion, D.IdEstilo,D.IdTipoEdicion  FROM dbo.DISCOS D JOIN\r\n  dbo.ESTILOS E ON E.Id = D.IdEstilo JOIN  dbo.TiposEdicion TE ON TE.Id = D.IdTipoEdicion where ";
 
-                if (campo == "Estilo") {
+                if (campo == "Estilo")
+                {
                     switch (criterio)
                     {
                         case "Comienza Con":
@@ -262,32 +254,32 @@ namespace Negocio
                     }
                 }
 
-                    accesoDatos.setearConsulta(consulta);
-                    accesoDatos.ejecutarLectura();
+                accesoDatos.setearConsulta(consulta);
+                accesoDatos.ejecutarLectura();
 
-                    while (accesoDatos.Lector.Read())
-                    {
+                while (accesoDatos.Lector.Read())
+                {
 
-                        Disco aux = new Disco();
+                    Disco aux = new Disco();
 
-                        aux.Id = (int)accesoDatos.Lector["Id"];
-                        aux.Titulo = (string)accesoDatos.Lector["Titulo"];
-                        aux.CantidadCanciones = (int)accesoDatos.Lector["CantidadCanciones"];
+                    aux.Id = (int)accesoDatos.Lector["Id"];
+                    aux.Titulo = (string)accesoDatos.Lector["Titulo"];
+                    aux.CantidadCanciones = (int)accesoDatos.Lector["CantidadCanciones"];
 
-                        if (!(accesoDatos.Lector.IsDBNull(accesoDatos.Lector.GetOrdinal("UrlImagenTapa"))))
-                            aux.UrlImagenTapa = (string)accesoDatos.Lector["UrlImagenTapa"];
+                    if (!(accesoDatos.Lector.IsDBNull(accesoDatos.Lector.GetOrdinal("UrlImagenTapa"))))
+                        aux.UrlImagenTapa = (string)accesoDatos.Lector["UrlImagenTapa"];
 
 
-                        aux.Estilo = new Estilo();
-                        aux.Estilo.Id = (int)accesoDatos.Lector["IdEstilo"];
-                        aux.Estilo.Descripcion = (string)accesoDatos.Lector["Estilo"];
-                        aux.Edicion = new Edicion();
-                        aux.Edicion.Id = (int)accesoDatos.Lector["IdTipoEdicion"];
-                        aux.Edicion.Descripcion = (string)accesoDatos.Lector["Edicion"];
+                    aux.Estilo = new Estilo();
+                    aux.Estilo.Id = (int)accesoDatos.Lector["IdEstilo"];
+                    aux.Estilo.Descripcion = (string)accesoDatos.Lector["Estilo"];
+                    aux.Edicion = new Edicion();
+                    aux.Edicion.Id = (int)accesoDatos.Lector["IdTipoEdicion"];
+                    aux.Edicion.Descripcion = (string)accesoDatos.Lector["Edicion"];
 
-                        listaDiscos.Add(aux);
+                    listaDiscos.Add(aux);
 
-                    }
+                }
 
                 return listaDiscos;
             }
@@ -319,7 +311,7 @@ namespace Negocio
         new Edicion { Id = 2, Descripcion = "CD " },
         new Edicion { Id = 3, Descripcion = "Tape" },
         new Edicion { Id = 4, Descripcion = "mp3" },
-      
+
             };
         }
 

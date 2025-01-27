@@ -18,20 +18,22 @@ namespace Presentacion_Web
 
             // pantalla inicial del formulario
 
-            TextBoxId.Enabled = true;
 
             try
             {
                 if (!IsPostBack)
                 {
                     listarDropDownListDB();
+                    TextBoxId.Enabled = false;
+                    TextBoxId.Visible = false;
+                    
                 }
 
                 string id = Request.QueryString["id"] != null ? Request.QueryString["id"].ToString() : "";
 
                 //configuracion si estamos modificando
-                if (id != "") {
-
+                if (id != "" && !(IsPostBack))
+                {
                     DiscoData discoData = new DiscoData();
 
                     Disco seleccionado = ((discoData.listar(id)[0]));
@@ -43,7 +45,7 @@ namespace Presentacion_Web
                     TextBoxUrlImagenTapa.Text = seleccionado.UrlImagenTapa;
                     TextBoxCantidadCanciones.Text = seleccionado.CantidadCanciones.ToString();
 
-                    DropDownListEdicion.SelectedValue = seleccionado.Edicion.Id.ToString(); 
+                    DropDownListEdicion.SelectedValue = seleccionado.Edicion.Id.ToString();
                     DropDownListEstilo.SelectedValue = seleccionado.Estilo.Id.ToString();
                     TextBoxUrlImagenTapa_TextChanged(sender, e);
 
@@ -82,7 +84,7 @@ namespace Presentacion_Web
         }
 
         protected void TextBoxUrlImagenTapa_TextChanged(object sender, EventArgs e)
-        {   
+        {
             UrlImagenTapa = TextBoxUrlImagenTapa.Text;
         }
 
@@ -105,8 +107,18 @@ namespace Presentacion_Web
                 discoNuevo.Estilo = new Estilo();
                 discoNuevo.Estilo.Id = int.Parse(DropDownListEstilo.SelectedValue);
 
-                discoData.agregarDisco(discoNuevo);
-                Response.Redirect("FormListaDiscos.aspx",false);
+
+                if (Request.QueryString["id"] != null)
+                {
+                    discoNuevo.Id = int.Parse(TextBoxId.Text);
+                    discoData.modificar(discoNuevo);
+                }
+                else
+                {
+                    discoData.agregarDisco(discoNuevo);
+                }
+
+                Response.Redirect("FormListaDiscos.aspx", false);
             }
             catch (Exception ex)
             {
@@ -114,6 +126,11 @@ namespace Presentacion_Web
                 Session.Add("Error", ex);
                 throw;
             }
+        }
+
+        protected void ButtonModificarDisco_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
