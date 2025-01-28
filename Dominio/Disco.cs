@@ -24,5 +24,6 @@ namespace Dominio
 
         public Edicion Edicion { get; set; }
 
+        public bool Activo { get; set; }
     }
 }

@@ -27,7 +27,8 @@
                     
                     <asp:BoundField HeaderText="Estilo" DataField="Estilo.Descripcion" HeaderStyle-CssClass="fw-bold" />
 
-                    
+                    <asp:CheckBoxField HeaderText="Activo" DataField="Activo" />
+
                     <asp:CommandField ShowSelectButton="true" SelectText="Seleccionar" HeaderText="Acción" />
                 </Columns>
             </asp:GridView>

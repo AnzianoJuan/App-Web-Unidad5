@@ -186,5 +186,21 @@ namespace Presentacion_Web
                 Session.Add("Error", ex);
             }
         }
+
+        protected void BtnInactivar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DiscoData data = new DiscoData();
+                data.eliminarLogico(int.Parse(TextBoxId.Text));
+                Response.Redirect("FormListaDiscos.aspx", false);
+
+            }
+            catch (Exception ex)
+            {
+                Session.Add("Error", ex);
+                
+            }
+        }
     }
 }

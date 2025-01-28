@@ -19,7 +19,7 @@ namespace Negocio
             {
                 string consulta = "SELECT D.Id AS Id, Titulo, D.CantidadCanciones, D.UrlImagenTapa, E.Descripcion AS Estilo, TE.Descripcion AS Edicion, D.IdEstilo,D.IdTipoEdicion  FROM dbo.DISCOS D JOIN dbo.ESTILOS E ON E.Id = D.IdEstilo JOIN dbo.TiposEdicion TE ON TE.Id = D.IdTipoEdicion ";
 
-                // consulta para no mostar los inactivos     datos.setearConsulta("SELECT D.Id AS Id, D.Titulo, D.CantidadCanciones, D.UrlImagenTapa, E.Descripcion AS Estilo, TE.Descripcion AS Edicion, D.IdEstilo,D.IdTipoEdicion  FROM dbo.DISCOS D JOIN dbo.ESTILOS E ON E.Id = D.IdEstilo JOIN dbo.TiposEdicion TE ON TE.Id = D.IdTipoEdicion and D.Activo = 1\r\n");
+                // consulta para no mostar los inactivos  datos.setearConsulta("SELECT D.Id AS Id, D.Titulo, D.CantidadCanciones, D.UrlImagenTapa, E.Descripcion AS Estilo, TE.Descripcion AS Edicion, D.IdEstilo,D.IdTipoEdicion  FROM dbo.DISCOS D JOIN dbo.ESTILOS E ON E.Id = D.IdEstilo JOIN dbo.TiposEdicion TE ON TE.Id = D.IdTipoEdicion and D.Activo = 1\r\n");
 
                 if (id != "")
                 {
@@ -214,7 +214,7 @@ namespace Negocio
 
                 AccesoDatos datos = new AccesoDatos();
 
-                datos.setearConsulta("update DISCOS set Activo = 0 where Id = @Id\r\n");
+                datos.setearConsulta("update DISCOS set Activo = 0 where Id = @Id");
                 datos.setearParametro("@Id", id);
 
                 datos.ejecutarAccion();

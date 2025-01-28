@@ -82,6 +82,7 @@
             <div class="d-flex justify-content-between">
                 <asp:Button ID="ButtonAgregarDisco" OnClick="ButtonAgregarDisco_Click" CssClass="btn btn-success me-2" runat="server" Text="Aceptar" />
                 <a href="Default.aspx" class="btn btn-warning">Cancelar</a>
+                <asp:Button Text="Inactivar" ID="BtnInactivar" runat="server" OnClick="BtnInactivar_Click" CssClass="btn btn-warning" />
             </div>
         </div>
     </div>
