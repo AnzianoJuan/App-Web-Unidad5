@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,16 +14,20 @@ namespace Presentacion_Web
     {
         public string UrlImagenTapa { get; set; }
 
+        public bool ConfirmaEliminacion { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
             // pantalla inicial del formulario
 
+            ConfirmaEliminacion = false;
 
             try
             {
                 if (!IsPostBack)
                 {
+                    DivConfirmaEliminacion.Visible = ConfirmaEliminacion;
                     listarDropDownListDB();
                 }
 
@@ -134,6 +139,52 @@ namespace Presentacion_Web
         protected void ButtonModificarDisco_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void ButtonEliminar_Click(object sender, EventArgs e)
+        {
+            ConfirmaEliminacion = true;
+            DivConfirmaEliminacion.Visible = true;
+        }
+
+        protected void ButtonConfiEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (CheckBoxConfiEliminacion.Checked)
+                {
+                    // Validar el ID antes de proceder
+                    int id;
+                    if (!int.TryParse(TextBoxId.Text, out id))
+                    {
+                        Debug.WriteLine("El valor de TextBoxId.Text no es un número válido: " + TextBoxId.Text);
+                        ScriptManager.RegisterStartupScript(this, GetType(), "alert", "alert('ID no válido o vacío. No se puede eliminar.');", true);
+                        return; // Termina la ejecución si el ID no es válido
+                    }
+
+                    Debug.WriteLine("ID válido recibido: " + id);
+
+                    // Proceder con la eliminación
+                    DiscoData discoData = new DiscoData();
+                    discoData.eliminar(id);
+
+                    Debug.WriteLine("Registro eliminado correctamente.");
+                    ScriptManager.RegisterStartupScript(this, GetType(), "alert", "alert('Registro eliminado correctamente.');", true);
+
+                    // Redirigir a la lista después de la eliminación
+                    Response.Redirect("FormListaDiscos.aspx", false);
+                }
+                else
+                {
+                    // Mostrar alerta si el checkbox no está marcado
+                    Debug.WriteLine("Checkbox no marcado. Confirmación requerida.");
+                    ScriptManager.RegisterStartupScript(this, GetType(), "alert", "alert('Debe confirmar la eliminación.');", true);
+                }
+            }
+            catch (Exception ex)
+            {
+                Session.Add("Error", ex);
+            }
         }
     }
 }

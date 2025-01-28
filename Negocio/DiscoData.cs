@@ -1,6 +1,7 @@
 ﻿using Dominio;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Negocio
 {
@@ -185,18 +186,17 @@ namespace Negocio
 
         public void eliminar(int id)
         {
-
             try
             {
+                Debug.WriteLine("Iniciando eliminación del registro con ID: " + id);
 
                 AccesoDatos datos = new AccesoDatos();
-
-                datos.setearConsulta("delete from DISCOS where Id = @Id \r\n");
+                datos.setearConsulta("DELETE FROM DISCOS WHERE Id = @Id");
                 datos.setearParametro("@Id", id);
 
                 datos.ejecutarAccion();
 
-
+                Debug.WriteLine("Registro eliminado correctamente.");
 
             }
             catch (Exception ex)

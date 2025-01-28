@@ -81,20 +81,28 @@
             <hr />
             <div class="d-flex justify-content-between">
                 <asp:Button ID="ButtonAgregarDisco" OnClick="ButtonAgregarDisco_Click" CssClass="btn btn-success me-2" runat="server" Text="Aceptar" />
-                <%--<asp:Button ID="ButtonModificarDisco" OnClick="ButtonModificarDisco_Click" CssClass="btn btn-success me-2" runat="server" Text="Modificar" />--%>
                 <a href="Default.aspx" class="btn btn-warning">Cancelar</a>
             </div>
         </div>
     </div>
+    <hr />
+   <div class="row">
+    <div class="col-6">
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+                <!-- Botón principal para eliminar -->
+                <div class="mb-3">
+                    <asp:Button Text="Eliminar" ID="ButtonEliminar" OnClick="ButtonEliminar_Click" CssClass="btn btn-danger" runat="server" />
+                </div>
+
+                <!-- Elementos de confirmación -->
+                <div class="mb-3" runat="server" id="DivConfirmaEliminacion">
+                    <asp:CheckBox Text="Confirmar Eliminación" ID="CheckBoxConfiEliminacion" runat="server" />
+                    <asp:Button Text="Eliminar Confirmado" OnClick="ButtonConfiEliminar_Click" ID="ButtonConfiEliminar" CssClass="btn btn-outline-danger" runat="server" />
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
     </div>
-
-
-            <%-- <div class="mb-3">
-                <asp:Button ID="ButtonAgregarDireccion" CssClass="btn btn-primary" runat="server" OnClick="ButtonAgregarDireccion_Click" Text="Aceptar" />
-                <asp:Button ID="ButtonModificarDireccion" CssClass="btn btn-primary" runat="server"  OnClick="ButtonModificarAuto_Click" Text="Modificar" />
-                <a href="Default.aspx">Cancelar</a>
-            </div>--%>
-    <asp:Label ID="LabelMensaje" runat="server" Text=""></asp:Label>
-
+</div>
 
 </asp:Content>
