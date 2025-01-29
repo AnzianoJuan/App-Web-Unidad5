@@ -17,9 +17,10 @@ namespace Negocio
 
             try
             {
-                string consulta = "SELECT D.Id AS Id, Titulo, D.CantidadCanciones, D.UrlImagenTapa, E.Descripcion AS Estilo, TE.Descripcion AS Edicion, D.IdEstilo,D.IdTipoEdicion  FROM dbo.DISCOS D JOIN dbo.ESTILOS E ON E.Id = D.IdEstilo JOIN dbo.TiposEdicion TE ON TE.Id = D.IdTipoEdicion ";
+                string consulta = "SELECT D.Id AS Id, Titulo, D.CantidadCanciones, D.UrlImagenTapa,E.Descripcion AS Estilo, TE.Descripcion AS Edicion, D.IdEstilo,D.IdTipoEdicion  FROM dbo.DISCOS D JOIN dbo.ESTILOS E ON E.Id = D.IdEstilo JOIN dbo.TiposEdicion TE ON TE.Id = D.IdTipoEdicion ";
 
-                // consulta para no mostar los inactivos  datos.setearConsulta("SELECT D.Id AS Id, D.Titulo, D.CantidadCanciones, D.UrlImagenTapa, E.Descripcion AS Estilo, TE.Descripcion AS Edicion, D.IdEstilo,D.IdTipoEdicion  FROM dbo.DISCOS D JOIN dbo.ESTILOS E ON E.Id = D.IdEstilo JOIN dbo.TiposEdicion TE ON TE.Id = D.IdTipoEdicion and D.Activo = 1\r\n");
+                // consulta para no mostar los inactivos  string consulta = "SELECT D.Id AS Id, Titulo, D.CantidadCanciones, D.UrlImagenTapa,D.Activo as Activo ,E.Descripcion AS Estilo, TE.Descripcion AS Edicion, D.IdEstilo,D.IdTipoEdicion  FROM dbo.DISCOS D JOIN dbo.ESTILOS E ON E.Id = D.IdEstilo JOIN dbo.TiposEdicion TE ON TE.Id = D.IdTipoEdicion ";
+
 
                 if (id != "")
                 {
@@ -56,6 +57,8 @@ namespace Negocio
                     aux.Edicion = new Edicion();
                     aux.Edicion.Id = (int)datos.Lector["IdTipoEdicion"];
                     aux.Edicion.Descripcion = (string)datos.Lector["Edicion"];
+
+                    //aux.Activo = bool.Parse(datos.Lector["Activo"].ToString());
 
                     listaDiscos.Add(aux);
 
@@ -207,15 +210,16 @@ namespace Negocio
 
         }
 
-        public void eliminarLogico(int id)
+        public void eliminarLogico(int id, bool activo = false)
         {
             try
             {
 
                 AccesoDatos datos = new AccesoDatos();
 
-                datos.setearConsulta("update DISCOS set Activo = 0 where Id = @Id");
+                datos.setearConsulta("update DISCOS set Activo = @activo where Id = @Id");
                 datos.setearParametro("@Id", id);
+                datos.setearParametro("@activo",activo);
 
                 datos.ejecutarAccion();
 

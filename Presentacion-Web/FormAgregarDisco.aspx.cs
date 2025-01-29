@@ -40,6 +40,10 @@ namespace Presentacion_Web
 
                     Disco seleccionado = ((discoData.listar(id)[0]));
 
+                    // guardo articulo seleccionado en session
+
+                    Session.Add("ArticuloSeleccionado", seleccionado);
+
                     //Precargar los campos 
                     DivTextBoxId.Visible = false;
 
@@ -51,6 +55,13 @@ namespace Presentacion_Web
                     DropDownListEdicion.SelectedValue = seleccionado.Edicion.Id.ToString();
                     DropDownListEstilo.SelectedValue = seleccionado.Estilo.Id.ToString();
                     TextBoxUrlImagenTapa_TextChanged(sender, e);
+
+                    // configurar acciones
+
+                    if (!seleccionado.Activo)
+                    {
+                        BtnInactivar.Text = "Rectivar";
+                    }
 
                 }
                 else
@@ -192,7 +203,9 @@ namespace Presentacion_Web
             try
             {
                 DiscoData data = new DiscoData();
-                data.eliminarLogico(int.Parse(TextBoxId.Text));
+                Disco seleccionado = (Disco)Session["ArticuloSeleccionado"];
+
+                data.eliminarLogico(seleccionado.Id, !seleccionado.Activo);
                 Response.Redirect("FormListaDiscos.aspx", false);
 
             }
