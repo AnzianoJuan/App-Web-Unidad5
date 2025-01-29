@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Dominio;
 using Negocio;
 
 
@@ -16,7 +17,9 @@ namespace Presentacion_Web
 
             DiscoData discoData = new DiscoData();
 
-            DGVListaDiscos.DataSource = discoData.listarSP();
+            Session.Add("ListaDiscos",discoData.listarSP());
+
+            DGVListaDiscos.DataSource = Session["ListaDiscos"];
             DGVListaDiscos.DataBind();
 
             if (!IsPostBack)
@@ -24,6 +27,7 @@ namespace Presentacion_Web
                 if (Session["ListaDiscos"] == null)
                 {
                     DiscoData negocio = new DiscoData();
+                    
                     Session.Add("ListaDiscos", negocio.listarSP());
                 }
             }
@@ -38,6 +42,14 @@ namespace Presentacion_Web
 
         protected void DGVListaDiscos_PageIndexChanged(object sender, EventArgs e)
         {
-        }        
+        }
+
+        protected void FiltroTextbox_TextChanged(object sender, EventArgs e)
+        {
+            List<Disco> listaDiscos = (List<Disco>)Session["ListaDiscos"];
+            List<Disco> listaFiltrada = listaDiscos.FindAll(x => x.Titulo.ToUpper().Contains(FiltroTextbox.Text.ToUpper()));
+            DGVListaDiscos.DataSource = listaFiltrada;
+            DGVListaDiscos.DataBind();
+        }
     }
 }

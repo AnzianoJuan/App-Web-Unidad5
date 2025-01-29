@@ -9,36 +9,46 @@
         <!-- Título principal -->
         <h2 class="text-center mb-4">Lista de Discos</h2>
         <p class="text-center text-muted">Consulta y administra los discos disponibles en la base de datos.</p>
-        
-        <!-- Tabla estilizada -->
-        <div class="table-responsive">
-            <asp:GridView 
-                ID="DGVListaDiscos" 
-                OnSelectedIndexChanged="DGVListaDiscos_SelectedIndexChanged" 
-                DataKeyNames="Id" 
-                AutoGenerateColumns="false" 
-                CssClass="table table-striped table-hover text-center" 
-                runat="server">
-                
-                <Columns>
-                
-                    <asp:BoundField HeaderText="Nombre" DataField="Titulo" HeaderStyle-CssClass="fw-bold" />
 
-                    
-                    <asp:BoundField HeaderText="Estilo" DataField="Estilo.Descripcion" HeaderStyle-CssClass="fw-bold" />
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <!-- ID -->
+                <div id="DivTextBoxId" runat="server" class="mb-3">
+                    <label>Filtrar</label>
+                    <asp:TextBox ID="FiltroTextbox" AutoPostBack="true" CssClass=" form-control" OnTextChanged="FiltroTextbox_TextChanged" runat="server" />
+                </div>
+            </div>
 
-                    <asp:CheckBoxField HeaderText="Activo" DataField="Activo" />
 
-                    <asp:CommandField ShowSelectButton="true" SelectText="Seleccionar" HeaderText="Acción" />
-                </Columns>
-            </asp:GridView>
+            <!-- Tabla estilizada -->
+            <div class="table-responsive">
+                <asp:GridView
+                    ID="DGVListaDiscos"
+                    OnSelectedIndexChanged="DGVListaDiscos_SelectedIndexChanged"
+                    DataKeyNames="Id"
+                    AutoGenerateColumns="false"
+                    CssClass="table table-striped table-hover text-center"
+                    runat="server">
+
+                    <Columns>
+
+                        <asp:BoundField HeaderText="Nombre" DataField="Titulo" HeaderStyle-CssClass="fw-bold" />
+
+
+                        <asp:BoundField HeaderText="Estilo" DataField="Estilo.Descripcion" HeaderStyle-CssClass="fw-bold" />
+
+                        <asp:CheckBoxField HeaderText="Activo" DataField="Activo" />
+
+                        <asp:CommandField ShowSelectButton="true" SelectText="Seleccionar" HeaderText="Acción" />
+                    </Columns>
+                </asp:GridView>
+            </div>
+
+
+            <div class="text-end mt-3">
+                <a href="FormAgregarDisco.aspx" class="btn btn-primary">Agregar Disco</a>
+            </div>
         </div>
-
-
-        <div class="text-end mt-3">
-            <a href="FormAgregarDisco.aspx" class="btn btn-primary">Agregar Disco</a>
-        </div>
-    </div>
 </asp:Content>
 
 
