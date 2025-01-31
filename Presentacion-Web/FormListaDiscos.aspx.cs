@@ -12,6 +12,9 @@ namespace Presentacion_Web
 {
     public partial class FormListaDiscos : System.Web.UI.Page
     {
+
+        public bool FiltroAvanzado { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -24,6 +27,8 @@ namespace Presentacion_Web
 
             if (!IsPostBack)
             {
+                FiltroAvanzado = CheckBoxFiltroAvanzado.Checked;
+
                 if (Session["ListaDiscos"] == null)
                 {
                     DiscoData negocio = new DiscoData();
@@ -50,6 +55,35 @@ namespace Presentacion_Web
             List<Disco> listaFiltrada = listaDiscos.FindAll(x => x.Titulo.ToUpper().Contains(FiltroTextbox.Text.ToUpper()));
             DGVListaDiscos.DataSource = listaFiltrada;
             DGVListaDiscos.DataBind();
+        }
+
+        protected void CheckBoxFiltroAvanzado_CheckedChanged(object sender, EventArgs e)
+        {
+
+            FiltroAvanzado = CheckBoxFiltroAvanzado.Checked;
+            txtBoxFiltroAvanzado.Enabled = !FiltroAvanzado;
+
+
+
+        }
+
+        protected void DDLCAMPOasp_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DDLCAMPOasp.Items.Clear();
+
+            if (DDLCAMPOasp.SelectedItem.ToString() == "Cantidad de canciones ")
+            {
+
+                ddlCriterio.Items.Add("Igual a ");
+                ddlCriterio.Items.Add("Mayor a ");
+                ddlCriterio.Items.Add("Menor a ");
+            }
+            else if (DDLCAMPOasp.SelectedItem.ToString() == "Titulo ")
+            {
+                ddlCriterio.Items.Add("Contiene ");
+                ddlCriterio.Items.Add("Comienza con ");
+                ddlCriterio.Items.Add("Termina con ");
+            }
         }
     }
 }

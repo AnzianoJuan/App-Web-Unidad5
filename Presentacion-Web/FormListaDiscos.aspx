@@ -9,6 +9,7 @@
         <!-- Título principal -->
         <h2 class="text-center mb-4">Lista de Discos</h2>
         <p class="text-center text-muted">Consulta y administra los discos disponibles en la base de datos.</p>
+     </div>
 
         <div class="row">
             <div class="col-md-6 offset-md-3">
@@ -19,6 +20,62 @@
                 </div>
             </div>
 
+            <div class="col-6" style="display: flex; flex-direction: column; justify-content: flex-end;">
+                <div class="mb-3">
+                    <asp:CheckBox Text="Filtro Avanzado"
+                        AutoPostBack="true"
+                        OnCheckedChanged="CheckBoxFiltroAvanzado_CheckedChanged"
+                        ID="CheckBoxFiltroAvanzado" runat="server" />
+                </div>
+            </div>
+
+            <%if (FiltroAvanzado)
+                {%>
+            <div class="row">
+                <div class="mb-3">
+                    <asp:Label Text="Campo" ID="LabelddlCampo" runat="server" />
+                    <asp:DropDownList runat="server"  ID="DDLCAMPOasp" AutoPostBack="true"  OnSelectedIndexChanged="DDLCAMPOasp_SelectedIndexChanged" CssClass="form-control">
+                        <asp:ListItem Text="Titulo " />
+                        <asp:ListItem Text="Cantidad de canciones " />
+                        <asp:ListItem Text="Edicion " />
+                    </asp:DropDownList>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="mb-3">
+                    <asp:Label Text="Criterio" runat="server" />
+                    <asp:DropDownList runat="server" ID="ddlCriterio" CssClass="form-control"></asp:DropDownList>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="mb-3">
+                    <asp:Label Text="Filtro" runat="server" />
+                    <asp:TextBox runat="server" ID="txtBoxFiltroAvanzado" CssClass="form-control" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="mb-3">
+                    <asp:Label Text="Estado" runat="server" />
+                    <asp:DropDownList runat="server" ID="ddlEstado" CssClass="form-control">
+                        <asp:ListItem Text="Todos" />
+                        <asp:ListItem Text="Activo" />
+                        <asp:ListItem Text="Inactivo" />
+                    </asp:DropDownList>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+                    <div class="mb-3">
+                        <asp:Button ID="ButtonBuscar" runat="server" CssClass="btn btn-primary" Text="Buscar" />
+                    </div>
+                </div>
+            </div>
+
+            <%} %>
 
             <!-- Tabla estilizada -->
             <div class="table-responsive">
