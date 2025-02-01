@@ -35,9 +35,9 @@
                 <div class="mb-3">
                     <asp:Label Text="Campo" ID="LabelddlCampo" runat="server" />
                     <asp:DropDownList runat="server"  ID="DDLCAMPOasp" AutoPostBack="true"  OnSelectedIndexChanged="DDLCAMPOasp_SelectedIndexChanged" CssClass="form-control">
-                        <asp:ListItem Text="Titulo " />
-                        <asp:ListItem Text="Cantidad de canciones " />
-                        <asp:ListItem Text="Edicion " />
+                        <asp:ListItem Text="Estilo" />
+                        <asp:ListItem Text="Titulo" />
+
                     </asp:DropDownList>
                 </div>
             </div>
@@ -70,7 +70,7 @@
             <div class="row">
                 <div class="col-3">
                     <div class="mb-3">
-                        <asp:Button ID="ButtonBuscar" runat="server" CssClass="btn btn-primary" Text="Buscar" />
+                        <asp:Button ID="ButtonBuscar" runat="server" CssClass="btn btn-primary" OnClick="ButtonBuscar_Click" Text="Buscar" />
                     </div>
                 </div>
             </div>

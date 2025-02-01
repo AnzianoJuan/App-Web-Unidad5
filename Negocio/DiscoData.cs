@@ -256,6 +256,19 @@ namespace Negocio
                             consulta += " E.Descripcion like '%" + filtro + "%'";
                             break;
                     }
+                }else if (campo == "Titulo"){
+                    switch (criterio)
+                    {
+                        case "Comienza Con":
+                            consulta += "Titulo like '" + filtro + "%'";
+                            break;
+                        case "Termina Con":
+                            consulta += "Titulo like '%" + filtro + "'";
+                            break;
+                        default:
+                            consulta += "Titulo like '%" + filtro + "%'";
+                            break;
+                    }
                 }
 
                 accesoDatos.setearConsulta(consulta);
