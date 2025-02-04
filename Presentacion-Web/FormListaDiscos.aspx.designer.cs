@@ -15,15 +15,6 @@ namespace Presentacion_Web
     {
 
         /// <summary>
-        /// Control DivTextBoxId.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivTextBoxId;
-
-        /// <summary>
         /// Control FiltroTextbox.
         /// </summary>
         /// <remarks>
@@ -40,15 +31,6 @@ namespace Presentacion_Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox CheckBoxFiltroAvanzado;
-
-        /// <summary>
-        /// Control LabelddlCampo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelddlCampo;
 
         /// <summary>
         /// Control DDLCAMPOasp.

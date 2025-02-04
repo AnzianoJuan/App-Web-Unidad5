@@ -1,112 +1,99 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FormListaDiscos.aspx.cs" Inherits="Presentacion_Web.FormListaDiscos" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <!-- Puedes incluir estilos personalizados aquí si lo deseas -->
+    <style>
+        .table th {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+        }
+        .table tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+    </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container mt-5">
         <!-- Título principal -->
-        <h2 class="text-center mb-4">Lista de Discos</h2>
-        <p class="text-center text-muted">Consulta y administra los discos disponibles en la base de datos.</p>
-     </div>
+        <h2 class="text-center mb-3">🎵 Lista de Discos</h2>
+        <p class="text-center text-muted">Consulta y administra los discos disponibles.</p>
 
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <!-- ID -->
-                <div id="DivTextBoxId" runat="server" class="mb-3">
-                    <label>Filtrar</label>
-                    <asp:TextBox ID="FiltroTextbox" AutoPostBack="true" CssClass=" form-control" OnTextChanged="FiltroTextbox_TextChanged" runat="server" />
-                </div>
-            </div>
-
-            <div class="col-6" style="display: flex; flex-direction: column; justify-content: flex-end;">
-                <div class="mb-3">
-                    <asp:CheckBox Text="Filtro Avanzado"
-                        AutoPostBack="true"
-                        OnCheckedChanged="CheckBoxFiltroAvanzado_CheckedChanged"
-                        ID="CheckBoxFiltroAvanzado" runat="server" />
-                </div>
-            </div>
-
-            <%if (FiltroAvanzado)
-                {%>
+        <!-- Sección de filtros -->
+        <div class="card p-3 shadow-sm mb-4">
             <div class="row">
-                <div class="mb-3">
-                    <asp:Label Text="Campo" ID="LabelddlCampo" runat="server" />
-                    <asp:DropDownList runat="server"  ID="DDLCAMPOasp" AutoPostBack="true"  OnSelectedIndexChanged="DDLCAMPOasp_SelectedIndexChanged" CssClass="form-control">
-                        <asp:ListItem Text="Estilo" />
-                        <asp:ListItem Text="Titulo" />
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">Filtrar</label>
+                    <asp:TextBox ID="FiltroTextbox" AutoPostBack="true" CssClass="form-control" OnTextChanged="FiltroTextbox_TextChanged" runat="server" placeholder="Buscar disco..." />
+                </div>
+                <div class="col-md-6 d-flex align-items-end">
+                    <asp:CheckBox ID="CheckBoxFiltroAvanzado" runat="server" Text="" AutoPostBack="true" CssClass="form-check-input ms-2" OnCheckedChanged="CheckBoxFiltroAvanzado_CheckedChanged" />
+                    <label class="form-check-label ms-2" for="CheckBoxFiltroAvanzado">Filtro Avanzado</label>
+                </div>
+            </div>
 
+            <% if (FiltroAvanzado) { %>
+            <div class="row mt-3">
+                <div class="col-md-4">
+                    <label class="form-label">Campo</label>
+                    <asp:DropDownList ID="DDLCAMPOasp" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DDLCAMPOasp_SelectedIndexChanged" CssClass="form-select">
+                        <asp:ListItem Text="Estilo" />
+                        <asp:ListItem Text="Título" />
                     </asp:DropDownList>
                 </div>
-            </div>
-
-            <div class="col-3">
-                <div class="mb-3">
-                    <asp:Label Text="Criterio" runat="server" />
-                    <asp:DropDownList runat="server" ID="ddlCriterio" CssClass="form-control"></asp:DropDownList>
+                <div class="col-md-4">
+                    <label class="form-label">Criterio</label>
+                    <asp:DropDownList ID="ddlCriterio" runat="server" CssClass="form-select"></asp:DropDownList>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Filtro</label>
+                    <asp:TextBox ID="txtBoxFiltroAvanzado" runat="server" CssClass="form-control" placeholder="Ingrese filtro..." />
                 </div>
             </div>
 
-            <div class="col-3">
-                <div class="mb-3">
-                    <asp:Label Text="Filtro" runat="server" />
-                    <asp:TextBox runat="server" ID="txtBoxFiltroAvanzado" CssClass="form-control" />
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="mb-3">
-                    <asp:Label Text="Estado" runat="server" />
-                    <asp:DropDownList runat="server" ID="ddlEstado" CssClass="form-control">
+            <div class="row mt-3">
+                <div class="col-md-4">
+                    <label class="form-label">Estado</label>
+                    <asp:DropDownList ID="ddlEstado" runat="server" CssClass="form-select">
                         <asp:ListItem Text="Todos" />
                         <asp:ListItem Text="Activo" />
                         <asp:ListItem Text="Inactivo" />
                     </asp:DropDownList>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-3">
-                    <div class="mb-3">
-                        <asp:Button ID="ButtonBuscar" runat="server" CssClass="btn btn-primary" OnClick="ButtonBuscar_Click" Text="Buscar" />
-                    </div>
+                <div class="col-md-4 d-flex align-items-end">
+                    <asp:Button ID="ButtonBuscar" runat="server" CssClass="btn btn-primary w-100" OnClick="ButtonBuscar_Click" Text="🔍 Buscar" />
                 </div>
             </div>
-
-            <%} %>
-
-            <!-- Tabla estilizada -->
-            <div class="table-responsive">
-                <asp:GridView
-                    ID="DGVListaDiscos"
-                    OnSelectedIndexChanged="DGVListaDiscos_SelectedIndexChanged"
-                    DataKeyNames="Id"
-                    AutoGenerateColumns="false"
-                    CssClass="table table-striped table-hover text-center"
-                    runat="server">
-
-                    <Columns>
-
-                        <asp:BoundField HeaderText="Nombre" DataField="Titulo" HeaderStyle-CssClass="fw-bold" />
-
-
-                        <asp:BoundField HeaderText="Estilo" DataField="Estilo.Descripcion" HeaderStyle-CssClass="fw-bold" />
-
-                        <asp:CheckBoxField HeaderText="Activo" DataField="Activo" />
-
-                        <asp:CommandField ShowSelectButton="true" SelectText="Seleccionar" HeaderText="Acción" />
-                    </Columns>
-                </asp:GridView>
-            </div>
-
-
-            <div class="text-end mt-3">
-                <a href="FormAgregarDisco.aspx" class="btn btn-primary">Agregar Disco</a>
-            </div>
+            <% } %>
         </div>
+
+        <!-- Tabla de Discos -->
+        <div class="table-responsive">
+            <asp:GridView ID="DGVListaDiscos"
+                AutoGenerateColumns="false"
+                CssClass="table table-hover table-bordered text-center"
+                DataKeyNames="Id"
+                OnSelectedIndexChanged="DGVListaDiscos_SelectedIndexChanged"
+                runat="server">
+
+                <Columns>
+                    <asp:BoundField HeaderText="🎶 Nombre" DataField="Titulo" HeaderStyle-CssClass="fw-bold" />
+                    <asp:BoundField HeaderText="🎼 Estilo" DataField="Estilo.Descripcion" HeaderStyle-CssClass="fw-bold" />
+                    <asp:CheckBoxField HeaderText="✅ Activo" DataField="Activo" />
+                    <asp:CommandField ShowSelectButton="true" SelectText="📌 Seleccionar" HeaderText="⚡ Acción" />
+                </Columns>
+            </asp:GridView>
+        </div>
+
+        <!-- Botón para agregar un nuevo disco -->
+        <div class="text-end mt-4">
+            <a href="FormAgregarDisco.aspx" class="btn btn-success">
+                ➕ Agregar Disco
+            </a>
+        </div>
+    </div>
 </asp:Content>
+
 
 
 
