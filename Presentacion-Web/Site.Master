@@ -29,6 +29,18 @@
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="FormListaDiscos.aspx">Lista Discos</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page"  href="#">Favoritos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page"  href="#">Mi perfil</a>
+                            </li>
+                            <li>
+                                <a class="nav-link active" aria-current="page" href="FormInicioSesion.apsx">Iniciar sesion✅</a>
+                            </li> 
+                            <li>
+                                <a class="nav-link active" aria-current="page" href="FormRegistro.aspx">Registrarse⚠️</a>
+                            </li>  
                         </ul>
                     </div>
 
